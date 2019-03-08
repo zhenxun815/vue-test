@@ -14,6 +14,13 @@
                  v-bind:key="index"
                  v-on:deleteItem="deleteItem"></todo-item>
     </ul>
+    <nav>
+      <router-link to="/about">about</router-link>
+      <router-link to="/home">home</router-link>
+    </nav>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

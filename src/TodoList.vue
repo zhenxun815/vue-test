@@ -12,8 +12,12 @@
                  v-bind:content="item"
                  v-bind:index="index"
                  v-bind:key="index"
-                 v-on:deleteItem="deleteItem"></todo-item>
+                 v-on:delete_item="deleteItem"></todo-item>
     </ul>
+    <array-component :numbers="numbers"
+                     @push_number="pushNumber">
+
+    </array-component>
     <nav>
       <router-link to="/about">about</router-link>
       <router-link to="/home">home</router-link>
@@ -26,15 +30,18 @@
 
 <script>
 import TodoItem from './components/TodoItem'
+import ArrayComponent from './components/ArrayComponent'
 
 export default {
   components: {
-    'todo-item': TodoItem
+    'todo-item': TodoItem,
+    'array-component': ArrayComponent
   },
   data () {
     return {
       inputValue: '',
-      list: []
+      list: [],
+      numbers: [1, 2, 3]
     }
   },
   methods: {
@@ -45,6 +52,10 @@ export default {
     },
     deleteItem (index) {
       this.list.splice(index, 1)
+    },
+    pushNumber (number) {
+      console.log(`pushNuber${number}`)
+      this.numbers.push(number)
     }
   }
 }

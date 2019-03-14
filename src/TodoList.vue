@@ -21,6 +21,13 @@
     <div>
       <router-view></router-view>
     </div>
+
+    <div>
+      watch_attr: {{watch_attr}}
+    </div>
+    <div>
+      compute_attr: {{compute_attr}}
+    </div>
   </div>
 </template>
 
@@ -34,17 +41,29 @@ export default {
   data () {
     return {
       inputValue: '',
-      list: []
+      list: [],
+      watch_attr: 'something'
     }
   },
   methods: {
     handleSubmit () {
       console.log('inputValue: ' + this.inputValue)
       this.list.push(this.inputValue)
+      this.watch_attr = this.inputValue
       this.inputValue = ''
     },
     deleteItem (index) {
       this.list.splice(index, 1)
+    }
+  },
+  watch: {
+    watch_attr: function (newVal, oldVal) {
+      console.log(`newVal is: ${newVal}, oldVal is: ${oldVal}`)
+    }
+  },
+  computed: {
+    compute_attr: function () {
+      return `${this.watch_attr}`
     }
   }
 }

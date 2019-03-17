@@ -4,6 +4,8 @@
     <nav>
       <router-link to="/todo_list">TodoList</router-link>
       <router-link to="/conditional_and_loop">ConditionalAndLoop</router-link>
+      <router-link to="/store1">Store1</router-link>
+      <router-link to="/store2">Store2</router-link>
     </nav>
     <br>
     <div>

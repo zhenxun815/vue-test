@@ -4,23 +4,16 @@
       <input type="text"
              v-model="inputValue">
       <input type="button"
-             v-on:click="handleSubmit"
+             @click="handleSubmit"
              value="提交">
     </div>
     <ul>
       <todo-item v-for="(item,index) of list"
-                 v-bind:content="item"
-                 v-bind:index="index"
-                 v-bind:key="index"
+                 :content="item"
+                 :index="index"
+                 :key="index"
                  v-on:deleteItem="deleteItem"></todo-item>
     </ul>
-    <nav>
-      <router-link to="/about">about</router-link>
-      <router-link to="/home">home</router-link>
-    </nav>
-    <div>
-      <router-view></router-view>
-    </div>
 
     <div>
       watch_attr: {{watch_attr}}
@@ -32,7 +25,7 @@
 </template>
 
 <script>
-import TodoItem from './components/TodoItem'
+import TodoItem from './TodoItem'
 
 export default {
   components: {

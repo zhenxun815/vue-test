@@ -1,20 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import About from '@/components/About'
-import Home from '@/components/Home'
+import TodoList from '@/components/TodoList'
+import ConditionalAndLoop from '@/components/ConditionalAndLoop'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/todo_list',
+      name: 'TodoList',
+      component: TodoList
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/conditional_and_loop',
+      name: 'ConditionalAndLoop',
+      component: ConditionalAndLoop
     }
   ]
 })

@@ -1,4 +1,4 @@
-<!-- vuex -->
+<!-- vuex  -->
 <template>
   <div>
     <div>store count is: {{msg}}</div>

@@ -4,6 +4,7 @@ import TodoList from '@/components/TodoList'
 import ConditionalAndLoop from '@/components/ConditionalAndLoop'
 import Store1 from '@/components/Store1'
 import Store2 from '@/components/Store2'
+import Demo1 from '@/components/Demo1'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/store2',
       name: 'Store2',
       component: Store2
+    },
+    {
+      path: '/demo1',
+      name: 'Demo1',
+      component: Demo1
     }
   ]
 })
